@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from math import *
 from matplotlib import cm
+from matplotlib.colors import LightSource
 
 # zad1
 
@@ -63,5 +64,37 @@ from matplotlib import cm
 # surf1 = ax.plot_surface(X, Y, Z, cmap=cm.ocean, linewidth=1, antialiased=False)
 # ax.set_zlim(-1.01, 1.01)
 # fig.colorbar(surf1,shrink=0.5, aspect=10, orientation='vertical', pad=0.1)
+#
+# plt.show()
+
+#zad4
+
+# fig = plt.figure(figsize=(8, 3))
+# ax1 = fig.add_subplot(231, projection='3d')
+# ax2 = fig.add_subplot(232, projection='3d')
+# ax3 = fig.add_subplot(233, projection='3d')
+# ax4 = fig.add_subplot(234, projection='3d')
+# ax5 = fig.add_subplot(235, projection='3d')
+# colors = ['r', 'g', 'b', 'm', 'c', 'y']
+#
+# _x = np.arange(4)
+# _y = np.arange(5)
+# _xx, _yy = np.meshgrid(_x, _y)
+# x, y = _xx.ravel(), _yy.ravel()
+#
+# top = x + y
+# bottom = np.zeros_like(top)
+# width = depth = 1
+#
+# ls = LightSource(azdeg=225.0, altdeg=45.0)
+# ax1.bar3d(x, y, bottom, width, depth, top, shade=True)
+# ax1.set_title('Wykres zacieniony')
+# ax2.bar3d(x, y, bottom, width, depth, top, shade=False)
+# ax2.set_title('Wykres nie zacieniony')
+# ax3.bar3d(x, y, bottom, width, depth, top, shade=True, lightsource=ls)
+# ax4.bar3d(x, y, bottom, width, depth, top, color='r', alpha=0.1)
+#
+# for i in range(6):
+#     ax5.bar3d(x, y, bottom, width, depth, top, color=colors[i], alpha=0.1)
 #
 # plt.show()
