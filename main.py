@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from math import *
 from matplotlib import cm
 from matplotlib.colors import LightSource
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+
 
 # zad1
 
@@ -17,6 +19,7 @@ from matplotlib.colors import LightSource
 #
 # ax.plot(z, x, y)
 # plt.show()
+
 
 # zad2
 
@@ -39,6 +42,7 @@ from matplotlib.colors import LightSource
 # ax.set_zlabel('Z Label')
 #
 # plt.show()
+
 
 #zad3
 
@@ -66,6 +70,7 @@ from matplotlib.colors import LightSource
 # fig.colorbar(surf1,shrink=0.5, aspect=10, orientation='vertical', pad=0.1)
 #
 # plt.show()
+
 
 #zad4
 
@@ -96,5 +101,38 @@ from matplotlib.colors import LightSource
 #
 # for i in range(6):
 #     ax5.bar3d(x, y, bottom, width, depth, top, color=colors[i], alpha=0.1)
+#
+# plt.show()
+
+
+#zad5
+
+# fig = plt.figure(figsize=(16, 9))
+# ax1 = fig.add_subplot(121, projection='3d')
+#
+# x = np.arange(-5, 5, 0.25)
+# y = np.arange(-5, 5, 0.25)
+# x, y = np.meshgrid(x, y)
+# r = np.sqrt(x**2 + y**2)
+# z = np.sin(r)
+#
+# surf1 = ax1.plot_surface(x, y, z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+# ax1.set_zlim(-1.01, 1.01)
+# ax1.zaxis.set_major_locator(LinearLocator(10))
+# ax1.zaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+# fig.colorbar(surf1, shrink=0.5, aspect=5)
+#
+# ax1 = fig.add_subplot(122, projection='3d')
+# x = np.arange(-5, 5, 0.1)
+# y = np.arange(-5, 5, 0.1)
+# x, y = np.meshgrid(x, y)
+# r = np.sqrt(x**2 + y**2)
+# z = np.sin(r)
+#
+# surf2 = ax1.plot_surface(x, y, z, cmap=cm.coolwarm, linewidth=0, antialiased=True)
+# ax1.set_zlim(-1.01, 1.01)
+# ax1.zaxis.set_major_locator(LinearLocator(10))
+# ax1.zaxis.set_major_formatter(FormatStrFormatter('%.2f'))
+# fig.colorbar(surf2, shrink=0.5, aspect=5)
 #
 # plt.show()
